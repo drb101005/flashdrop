@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('/assets/fonts/BricolageGrotesque.woff2') format('woff2');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/assets/fonts/Satoshi.woff2') format('woff2');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 0.11 0.010 265;
+    --foreground: 0.97 0.005 265;
+    --card: 0.16 0.012 265;
+    --card-foreground: 0.97 0.005 265;
+    --popover: 0.16 0.012 265;
+    --popover-foreground: 0.97 0.005 265;
+    --primary: 0.74 0.175 55;
+    --primary-foreground: 0.12 0.010 265;
+    --secondary: 0.22 0.012 265;
+    --secondary-foreground: 0.97 0.005 265;
+    --muted: 0.20 0.010 265;
+    --muted-foreground: 0.58 0.010 265;
+    --accent: 0.65 0.22 28;
+    --accent-foreground: 0.97 0.005 265;
+    --destructive: 0.55 0.22 28;
+    --destructive-foreground: 0.97 0.005 265;
+    --border: 0.25 0.012 265;
+    --input: 0.22 0.012 265;
+    --ring: 0.74 0.175 55;
+    --radius: 0.75rem;
+    --chart-1: 0.74 0.175 55;
+    --chart-2: 0.65 0.22 28;
+    --chart-3: 0.65 0.18 145;
+    --chart-4: 0.60 0.15 200;
+    --chart-5: 0.55 0.12 280;
+    --sidebar: 0.13 0.010 265;
+    --sidebar-foreground: 0.97 0.005 265;
+    --sidebar-primary: 0.74 0.175 55;
+    --sidebar-primary-foreground: 0.12 0.010 265;
+    --sidebar-accent: 0.22 0.012 265;
+    --sidebar-accent-foreground: 0.97 0.005 265;
+    --sidebar-border: 0.25 0.012 265;
+    --sidebar-ring: 0.74 0.175 55;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; font-family: 'Satoshi', sans-serif; }
+  h1, h2, h3, h4, h5, h6 { font-family: 'Bricolage Grotesque', sans-serif; }
+}
+
+@keyframes slide-up { from { transform: translateY(12px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+.animate-slide-up { animation: slide-up 0.4s ease-out forwards; }
+.animate-blink { animation: blink 1.2s ease-in-out infinite; }
+.animate-marquee { animation: marquee 20s linear infinite; }
+
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
